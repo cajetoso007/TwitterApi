@@ -22,5 +22,5 @@ The following **bonus** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-https://recordit.co/mxMKk8ASrq
+<http://g.recordit.co/mxMKk8ASrq.gif>
 
