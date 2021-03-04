@@ -45,7 +45,12 @@ class HomeTableViewController: UITableViewController {
             cell.profileImageView.image = UIImage(data: imageData)
         }
         
-            return cell
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)//(tweetArray[indexPath.row]["retweeted"] as! Bool
+        
+        
+        return cell
     }
     
     override func viewDidLoad() {
@@ -55,8 +60,11 @@ class HomeTableViewController: UITableViewController {
         
         //numberOfTweets = 20
        myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
-        tableView.refreshControl = myRefreshControl
-        
+        self.tableView.refreshControl = myRefreshControl
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 150
+        //self.tweetArray.refreshControl = myRefreshControl
+        //self.tweetArray.rowHeight = UITableView.automaticDimension
         //need to create a user default to have the app remember we're logged in**/
     }
     
